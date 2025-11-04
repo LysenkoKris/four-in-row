@@ -1,0 +1,41 @@
+.settingsContainer {
+  border: 2px solid #7161ef;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: #f9faff;
+  width: fit-content;
+}
+
+.inputsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 12px;
+  color: #222;
+
+  input {
+    margin-top: 6px;
+  }
+}
+
+.numberInput {
+  width: 80px;
+  padding: 6px 8px;
+  font-size: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  outline-offset: 2px;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    border-color: #7161ef;
+    outline: none;
+  }
+}

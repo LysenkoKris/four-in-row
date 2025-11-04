@@ -1,0 +1,65 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.resultContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #222;
+}
+
+.info {
+  font-size: 10px;
+  color: #222;
+}
+
+
+.scoreboard {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 70px;
+  font-weight: 600;
+}
+
+.score {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.playerCircle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.player1Circle {
+  background-color: #ffd6ff;
+}
+
+.player2Circle {
+  background-color: #bbd0ff;
+}
+
+.activePlayer {
+  color: inherit;
+  font-weight: 600;
+  color: #2c2c2c;
+
+  .playerCircle {
+    opacity: 1;
+  }
+}
+

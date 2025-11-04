@@ -1,0 +1,93 @@
+.boardRoot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .boardHeader {
+    display: flex;
+    margin-bottom: 12px;
+    gap: 6px;
+
+    .headerCell {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      cursor: pointer;
+
+      .headerDiscPlayer1,
+      .headerDiscPlayer2 {
+        width: 40px;
+        height: 40px;
+        margin: auto;
+        border-radius: 150px;
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+        transition: background 300ms;
+        position: absolute;
+        top: 0;
+      }
+
+      .headerDiscPlayer1 {
+        background: #ffd6ff;
+      }
+      .headerDiscPlayer2 {
+        background: #bbd0ff;
+      }
+    }
+  }
+
+  .boardMain {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    flex-wrap: wrap;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+
+      .cell {
+        width: 40px;
+        height: 40px;
+        border-radius: 150px;
+
+        &.cellPlayer1 {
+          background: #ffd6ff;
+        }
+        &.cellPlayer2 {
+          background: #bbd0ff;
+        }
+        &.cellEmpty {
+          background: #dadadaff;
+        }
+
+        &.winnerPulsePlayer1 {
+          animation: bgColorPulsePlayer1 2s infinite ease-in-out;
+        }
+
+        &.winnerPulsePlayer2 {
+          animation: bgColorPulsePlayer2 2s infinite ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bgColorPulsePlayer1 {
+  0%, 100% {
+    background-color: #ffd6ffcc;
+  }
+  50% {
+    background-color: #e88deccc;
+  }
+}
+
+@keyframes bgColorPulsePlayer2 {
+  0%, 100% {
+    background-color: #bbd0ffcc;
+  }
+  50% {
+    background-color: #6999e8cc;
+  }
+}
