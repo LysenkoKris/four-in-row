@@ -4,12 +4,15 @@
   border-radius: 8px;
   background-color: #f9faff;
   width: fit-content;
+  font-size: 12px;
+  margin: auto;
 }
 
 .inputsRow {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  margin-top: 12px;
 }
 
 .inputLabel {

@@ -19,6 +19,7 @@ export const Settings: React.FC<SettingsProps> = ({
   onWinCountChange
 }) => (
   <div className={styles.settingsContainer}>
+    Для применения изменений необходимо начать новую игру
     <div className={styles.inputsRow}>
       <label className={styles.inputLabel}>
         Кол-во столбцов:

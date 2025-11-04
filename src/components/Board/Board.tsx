@@ -45,7 +45,6 @@ export const Board: React.FC<BoardProps> = ({
     </div>
     <div
       className={styles.boardMain}
-      style={{ maxWidth: colsCount * 46 }}
     >
       {arr.map((column, colIndex) => (
         <div

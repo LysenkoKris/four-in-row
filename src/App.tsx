@@ -7,9 +7,15 @@ import { Board } from './components/Board/Board';
 
 
 function App() {
-  const [colsCount, setColsCount] = useState<number>(7);
-  const [rowsCount, setRowsCount] = useState<number>(6);
-  const [winCount, setWinCount] = useState<number>(4);
+  const [colsCount, setColsCount] = useState<number>(
+    Number(localStorage.getItem('colsCount')) || 7
+  );
+  const [rowsCount, setRowsCount] = useState<number>(
+    Number(localStorage.getItem('rowsCount')) || 6
+  );
+  const [winCount, setWinCount] = useState<number>(
+    Number(localStorage.getItem('winCount')) || 4
+  );
 
   const createBoard = (cols: number, rows: number) => 
     Array(cols).fill(null).map(() => Array(rows).fill(null));
@@ -45,7 +51,7 @@ function App() {
     localStorage.setItem('rowsCount', JSON.stringify(rowsCount));
     localStorage.setItem('winCount', JSON.stringify(winCount));
     const result = checkWinner(arr);
-    console.log(validator(steps));
+    if (colsCount === 7 && rowsCount === 6 && winCount === 4) { console.log(validator(steps)) }
     if (result) {
       setWinner(result);
     } else if (steps.length === colsCount * rowsCount) {
@@ -195,11 +201,6 @@ function App() {
     );
   };
 
-
-  useEffect(() => {
-    restart();
-  }, [colsCount, rowsCount, winCount]);
-
   return (
     <>
       <Settings
@@ -219,7 +220,7 @@ function App() {
           : 'Идет игра...'}
         
       </div>
-      <span className="info">Вывод результата работы функции validator на каждом шаге в console dev tools</span>
+      <span className="info">Вывод результата работы validator(но только при стандартных настройках доски!) в console dev tools</span>
      
       <div className="scoreboard">
         <span className={`score ${nextPlayer === 'player_1' ? 'activePlayer' : ''}`}>
